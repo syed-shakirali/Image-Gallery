@@ -1,0 +1,105 @@
+/* Global Styles */
+body {
+    /* font-family: Arial, sans-serif; */
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;/* Ensure full height coverage*/
+}
+
+/* Gallery Container */
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Default: 4 columns layout */
+    gap: 5px; /* Spacing between the items */
+    padding: 20px;
+    background-color: #080808;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(17, 17, 17, 0.1);
+    /* max-width: 1200px; Constrain max width */
+}
+
+/* Gallery Items */
+.gallery-container div {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #585858;
+    color: #fff;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+/* Image Styling */
+.gallery-container img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    transition: transform 0.3s ease;
+    filter: grayscale(100%);
+    transition: transform 0.5s ease, filter 0.5s ease;
+
+}
+
+/* Hover Effects */
+.gallery-container div:hover img {
+    transform: scale(1.1);
+    filter: grayscale(0%);
+
+}
+
+.gallery-container div:hover {
+    transform: translateY(-5px);
+}
+
+/* Media Queries for Responsive Design */
+
+/* Tablet View: 2 Columns */
+@media(min-width: 600px)and (max-width: 991px) {
+    .gallery-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+        gap: 10px;
+    }
+}
+
+/* Mobile View: 1 Column */
+ @media(max-width:599px) { 
+    .gallery-container {
+        grid-template-columns: 1fr; /* 1 column for mobile devices */
+        gap: 20px; /* Reduced gap for smaller screens */
+    }
+}
+
+/* Desktop specific styles */
+@media (min-width: 992px) {
+    .gallery-container {
+        grid-template-columns:repeat(4,1fr); /* 1 column for mobile devices */
+        /* width: 1366px; */
+        gap: 20px;
+    }
+   .gallery-item2 {
+    grid-row-start: span 2;
+   } 
+   .gallery-item10 {
+    grid-row-start: span 2;
+   } 
+   .gallery-item6{
+    grid-row-start: span 2;
+   }
+   .gallery-item8{
+    grid-row-start: span 2;
+   }
+   .gallery-item12{
+    grid-row-start: span 2;
+   }
+   .gallery-item4{
+    grid-row-start: span 2;
+   }
+}
